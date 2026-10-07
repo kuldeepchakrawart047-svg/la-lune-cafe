@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Lune | Order</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="order-page">
+
+<header class="navbar">
+  <a class="logo" href="index.html#home"><span>La Lune</span><small>FRENCH BISTRO</small></a>
+  <nav>
+    <a href="index.html#home">HOME</a>
+    <a class="active" href="order.html">MENU</a>
+    <a href="index.html#about">ABOUT US</a>
+    <a href="index.html#book-table">BOOK TABLE</a>
+    <a href="index.html#contact">CONTACT</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="icon-btn" aria-label="Search">⌕</button>
+    <a class="cart-btn" href="cart.html" aria-label="Cart">🛒<b id="orderCartCount">0</b></a>
+    <a class="order-btn" href="order.html">ORDER NOW</a>
+  </div>
+</header>
+
+<main>
+<section class="order-hero">
+  <p class="script">✦ Craving Something Delicious? ✦</p>
+  <h1>ORDER <span>YOUR</span> FAVORITE</h1>
+  <div class="cutlery">⌁ 🍴 ⌁</div>
+</section>
+
+<section class="order-area">
+  <div class="order-left">
+    <div class="category-tabs">
+      <button class="category active" data-category="pizza">🍕 PIZZA</button>
+      <button class="category" data-category="burger">🍔 BURGER</button>
+      <button class="category" data-category="noodles">🍜 NOODLES</button>
+      <button class="category" data-category="drinks">🥤 DRINKS</button>
+    </div>
+
+    <div class="menu-search">
+      <span>⌕</span>
+      <input id="menuSearch" type="search" placeholder="Search pizza, burger, noodles, drinks..." autocomplete="off">
+      <button id="clearSearch" type="button" aria-label="Clear search">×</button>
+    </div>
+    <p class="search-status" id="searchStatus"></p>
+
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+
+  <aside class="order-summary">
+    <div class="order-summary-head">
+      <h2>🛒 YOUR ORDER</h2>
+      <strong id="orderItemCount">0 Items</strong>
+    </div>
+    <div id="miniCart"></div>
+    <div class="mini-totals">
+      <div><span>Subtotal</span><strong id="miniSubtotal">₹0</strong></div>
+      <div><span>Delivery Fee</span><strong id="miniDelivery">₹0</strong></div>
+      <div class="mini-total"><span>Total</span><strong id="miniTotal">₹0</strong></div>
+    </div>
+    <button class="place-order-btn" id="placeOrderBtn">PLACE ORDER →</button>
+  </aside>
+</section>
+</main>
+
+<script src="order.js"></script>
+</body>
+</html>

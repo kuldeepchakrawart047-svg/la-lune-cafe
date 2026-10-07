@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Lune | French Bistro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a class="logo" href="#">
+    <span>La Lune</span>
+    <small>FRENCH BISTRO</small>
+  </a>
+
+  <nav>
+    <a class="active" href="#home">HOME</a>
+    <a href="#menu">MENU</a>
+    <a href="#about">ABOUT US</a>
+    <a href="#book-table">BOOK TABLE</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="icon-btn" aria-label="Search">⌕</button>
+    <a class="cart-btn" href="cart.html" aria-label="Cart">🛒<b>0</b></a>
+    <a class="order-btn" href="order.html">ORDER NOW</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <p class="script">Good Food, Good Mood</p>
+      <h1>A TASTE OF <span>PARIS</span></h1>
+      <p class="intro">
+        Indulge in a world of delicious flavors.<br>
+        From pizzas to burgers, noodles to drinks,<br>
+        we serve happiness on your plate.
+      </p>
+      <div class="hero-buttons">
+        <a class="primary-btn" href="#menu">EXPLORE MENU →</a>
+        <a class="secondary-btn" href="#book-table">BOOK A TABLE</a>
+      </div>
+    </div>
+
+    <div class="hero-foods">
+      <div class="fresh-badge">✦<strong>100%</strong><span>FRESH<br>INGREDIENTS</span></div>
+      <img class="food noodle" src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=85" alt="Noodles">
+      <img class="food drink" src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=700&q=85" alt="Fresh drink">
+      <img class="food burger" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=85" alt="Burger">
+      <img class="food pizza" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=85" alt="Pizza">
+    </div>
+  </section>
+
+  <section class="food-grid" id="menu">
+    <article class="food-card" data-product="Cheesy Veggie Pizza" data-price="279" data-image="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=85">
+      <div class="card-copy"><p>SPICY</p><h2>PIZZA</h2><small>Hot & Cheesy</small><button class="add-cart">+</button></div>
+      <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=85" alt="Pizza">
+    </article>
+
+    <article class="food-card" data-product="Classic Chicken Burger" data-price="299" data-image="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85">
+      <div class="card-copy"><p>JUICY</p><h2>BURGERS</h2><small>Grilled to Perfection</small><button class="add-cart">+</button></div>
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Burger">
+    </article>
+
+    <article class="food-card" data-product="Hot Wok Noodles" data-price="229" data-image="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=85">
+      <div class="card-copy"><p>HOT</p><h2>NOODLES</h2><small>Wok Tossed Goodness</small><button class="add-cart">+</button></div>
+      <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=85" alt="Noodles">
+    </article>
+
+    <article class="food-card" data-product="Fresh Cool Drinks" data-price="149" data-image="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=85">
+      <div class="card-copy"><p>COOL</p><h2>DRINKS</h2><small>Fresh & Refreshing</small><button class="add-cart">+</button></div>
+      <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=85" alt="Drinks">
+    </article>
+  </section>
+
+  <section class="features" id="about">
+    <div><span>🛵</span><strong>FAST DELIVERY</strong><small>On time, every time</small></div>
+    <div><span>🌿</span><strong>FRESH INGREDIENTS</strong><small>100% quality assured</small></div>
+    <div><span>👨‍🍳</span><strong>EXPERT CHEFS</strong><small>Experience the taste</small></div>
+    <div><span>🎧</span><strong>24/7 SUPPORT</strong><small>We're here for you</small></div>
+  </section>
+
+  <section class="book-table" id="book-table">
+    <div class="book-copy">
+      <p class="script">Reserve your table</p>
+      <h2>BOOK <span>A TABLE</span></h2>
+      <p>Make your evening special at La Lune. Choose your date, time and number of guests.</p>
+    </div>
+    <form class="booking-form" onsubmit="bookTable(event)">
+      <div class="form-row">
+        <label>Name<input type="text" id="guestName" placeholder="Your name" required></label>
+        <label>Phone<input type="tel" id="guestPhone" placeholder="Your phone" required></label>
+      </div>
+      <div class="form-row">
+        <label>Date<input type="date" id="bookingDate" required></label>
+        <label>Time<input type="time" id="bookingTime" required></label>
+      </div>
+      <label>Guests<select id="guestCount"><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6+ Guests</option></select></label>
+      <button class="primary-btn" type="submit">CONFIRM BOOKING →</button>
+    </form>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>CONTACT US</h2>
+    <p>La Lune French Bistro · Fresh food, warm service and great moments.</p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

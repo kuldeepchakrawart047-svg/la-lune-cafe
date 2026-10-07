@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Lune | Checkout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="checkout-page">
+<header class="navbar">
+  <a class="logo" href="index.html"><span>La Lune</span><small>FRENCH BISTRO</small></a>
+  <nav><a href="index.html#home">HOME</a><a href="index.html#menu">MENU</a><a href="index.html#about">ABOUT US</a><a href="index.html#book-table">BOOK TABLE</a><a href="index.html#contact">CONTACT</a></nav>
+  <div class="nav-actions"><a class="cart-btn" href="cart.html">🛒<b id="checkoutCartCount">0</b></a><a class="order-btn" href="order.html">ORDER NOW</a></div>
+</header>
+<main>
+<section class="cart-hero"><p class="script">✦ Almost There ✦</p><h1>CHECK <span>OUT</span></h1><p>Enter your details and choose a payment method.</p></section>
+<section class="checkout-layout">
+  <form class="checkout-form" id="checkoutForm">
+    <h2>DELIVERY DETAILS</h2>
+    <div class="form-row"><label>Full Name<input id="fullName" required placeholder="Enter your name"></label><label>Mobile Number<input id="mobile" type="tel" required placeholder="Enter mobile number"></label></div>
+    <label>Delivery Address<textarea id="address" required placeholder="House no., street, area, city"></textarea></label>
+    <h2 class="payment-title">PAYMENT METHOD</h2>
+    <div class="payment-options">
+      <label class="payment-card active"><input type="radio" name="payment" value="UPI" checked><span class="payment-icon">◉</span><span><strong>UPI</strong><small>Google Pay / PhonePe / Paytm</small></span></label>
+      <label class="payment-card"><input type="radio" name="payment" value="Card"><span class="payment-icon">▣</span><span><strong>Credit / Debit Card</strong><small>Secure card payment</small></span></label>
+      <label class="payment-card"><input type="radio" name="payment" value="COD"><span class="payment-icon">💵</span><span><strong>Cash on Delivery</strong><small>Pay when your order arrives</small></span></label>
+    </div>
+    <div id="paymentExtra" class="payment-extra"><label>UPI ID<input id="upiId" placeholder="example@upi"></label></div>
+    <button class="primary-btn place-order" type="submit">PLACE ORDER →</button>
+    <a class="continue" href="cart.html">← Back to Cart</a>
+  </form>
+  <aside class="summary"><h2>YOUR ORDER</h2><div id="checkoutItems"></div><div class="summary-row"><span>Subtotal</span><strong id="checkoutSubtotal">₹0</strong></div><div class="summary-row"><span>Delivery Fee</span><strong id="checkoutDelivery">₹0</strong></div><div class="summary-total"><span>Total</span><strong id="checkoutTotal">₹0</strong></div></aside>
+</section>
+</main>
+<script src="checkout.js"></script>
+</body></html>
