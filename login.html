@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Lune | Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0b0b0b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 1000px;
+            min-height: 600px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #151515;
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid #333;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        /* LEFT SIDE */
+        .left {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.7)
+                ),
+                #17120c;
+        }
+
+        .left h1 {
+            font-family: Georgia, serif;
+            font-size: 58px;
+            color: #d9aa59;
+            margin-bottom: 15px;
+        }
+
+        .left h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #eee;
+        }
+
+        .left p {
+            color: #aaa;
+            line-height: 1.8;
+            max-width: 400px;
+        }
+
+        .tagline {
+            margin-top: 30px;
+            color: #d9aa59;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        /* RIGHT SIDE */
+        .right {
+            padding: 45px;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-box {
+            width: 100%;
+            max-width: 420px;
+            margin: auto;
+        }
+
+        .back {
+            text-align: right;
+            margin-bottom: 25px;
+        }
+
+        .back a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back a:hover {
+            color: #d9aa59;
+        }
+
+        .form-box h2 {
+            font-family: Georgia, serif;
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        /* TABS */
+        .tabs {
+            display: flex;
+            background: #0d0d0d;
+            padding: 5px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tabs button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            color: #999;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .tabs button.active {
+            background: #d9aa59;
+            color: #111;
+        }
+
+        /* FORM */
+        .form {
+            display: none;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #bbb;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            background: #0d0d0d;
+            color: white;
+            border: 1px solid #333;
+            border-radius: 9px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .input-group input:focus {
+            border-color: #d9aa59;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: #d9aa59;
+            color: #111;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .submit-btn:hover {
+            background: #e7bc70;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 15px;
+            color: #d9aa59;
+            font-size: 13px;
+            min-height: 20px;
+        }
+
+        .demo-note {
+            text-align: center;
+            color: #666;
+            font-size: 11px;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        /* MOBILE */
+        @media (max-width: 750px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .login-container {
+                grid-template-columns: 1fr;
+            }
+
+            .left {
+                padding: 35px 25px;
+            }
+
+            .left h1 {
+                font-size: 43px;
+            }
+
+            .left h3 {
+                font-size: 17px;
+            }
+
+            .right {
+                padding: 30px 20px;
+            }
+
+            .form-box h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <!-- LEFT -->
+    <div class="left">
+
+        <h1>La Lune</h1>
+
+        <h3>French Bistro</h3>
+
+        <p>
+            Welcome to La Lune. Create your account and
+            enjoy a smooth experience for food orders
+            and table bookings.
+        </p>
+
+        <div class="tagline">
+            GOOD FOOD • GOOD MOMENTS
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT -->
+    <div class="right">
+
+        <div class="form-box">
+
+            <div class="back">
+                <a href="index(1).html">
+                    ← Back to Website
+                </a>
+            </div>
+
+
+            <h2 id="formTitle">
+                Welcome Back
+            </h2>
+
+            <p class="subtitle" id="formSubtitle">
+                Login to your La Lune account
+            </p>
+
+
+            <!-- TABS -->
+            <div class="tabs">
+
+                <button
+                    id="loginTab"
+                    class="active"
+                    onclick="showLogin()">
+                    Login
+                </button>
+
+                <button
+                    id="signupTab"
+                    onclick="showSignup()">
+                    Create Account
+                </button>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+            <form
+                id="loginForm"
+                class="form active"
+                onsubmit="loginUser(event)">
+
+                <div class="input-group">
+
+                    <label>
+                        Email or Mobile
+                    </label>
+
+                    <input
+                        type="text"
+                        id="loginContact"
+                        placeholder="Enter email or mobile"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter password"
+                        required>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    LOGIN
+
+                </button>
+
+            </form>
+
+
+            <!-- SIGNUP FORM -->
+            <form
+                id="signupForm"
+                class="form"
+                onsubmit="createAccount(event)">
+
+                <div class="input-group">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="Enter mobile number"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Minimum 6 characters"
+                        minlength="6"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Re-enter password"
+                        minlength="6"
+                        required>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    CREATE ACCOUNT
+
+                </button>
+
+            </form>
+
+
+            <div
+                id="message"
+                class="message">
+            </div>
+
+
+            <div class="demo-note">
+                Frontend demo only. Backend and database
+                will be connected in the next step.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /* SHOW LOGIN */
+
+    function showLogin() {
+
+        document
+            .getElementById("loginForm")
+            .classList.add("active");
+
+        document
+            .getElementById("signupForm")
+            .classList.remove("active");
+
+
+        document
+            .getElementById("loginTab")
+            .classList.add("active");
+
+        document
+            .getElementById("signupTab")
+            .classList.remove("active");
+
+
+        document
+            .getElementById("formTitle")
+            .innerText = "Welcome Back";
+
+        document
+            .getElementById("formSubtitle")
+            .innerText =
+            "Login to your La Lune account";
+
+        document
+            .getElementById("message")
+            .innerText = "";
+    }
+
+
+    /* SHOW SIGNUP */
+
+    function showSignup() {
+
+        document
+            .getElementById("signupForm")
+            .classList.add("active");
+
+        document
+            .getElementById("loginForm")
+            .classList.remove("active");
+
+
+        document
+            .getElementById("signupTab")
+            .classList.add("active");
+
+        document
+            .getElementById("loginTab")
+            .classList.remove("active");
+
+
+        document
+            .getElementById("formTitle")
+            .innerText = "Create Account";
+
+        document
+            .getElementById("formSubtitle")
+            .innerText =
+            "Join La Lune today";
+
+        document
+            .getElementById("message")
+            .innerText = "";
+    }
+
+
+    /* CREATE ACCOUNT */
+
+    function createAccount(event) {
+
+        event.preventDefault();
+
+        let name =
+            document.getElementById("name").value;
+
+        let email =
+            document.getElementById("email").value;
+
+        let mobile =
+            document.getElementById("mobile").value;
+
+        let password =
+            document.getElementById("password").value;
+
+        let confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+
+        if (password !== confirmPassword) {
+
+            document.getElementById("message")
+                .innerText =
+                "Passwords do not match.";
+
+            return;
+        }
+
+
+        /*
+        TEMPORARY DEMO
+
+        Later this information will go to
+        Backend + Database.
+        */
+
+        localStorage.setItem(
+            "laLuneDemoUser",
+            JSON.stringify({
+                name: name,
+                email: email,
+                mobile: mobile,
+                password: password
+            })
+        );
+
+
+        document.getElementById("message")
+            .innerText =
+            "Account created successfully!";
+
+
+        document
+            .getElementById("signupForm")
+            .reset();
+
+
+        setTimeout(function () {
+
+            showLogin();
+
+        }, 1000);
+
+    }
+
+
+    /* LOGIN */
+
+    function loginUser(event) {
+
+        event.preventDefault();
+
+
+        let contact =
+            document
+            .getElementById("loginContact")
+            .value;
+
+        let password =
+            document
+            .getElementById("loginPassword")
+            .value;
+
+
+        let savedUser =
+            JSON.parse(
+                localStorage.getItem(
+                    "laLuneDemoUser"
+                )
+            );
+
+
+        if (
+            savedUser &&
+            (
+                contact === savedUser.email ||
+                contact === savedUser.mobile
+            ) &&
+            password === savedUser.password
+        ) {
+
+            localStorage.setItem(
+                "laLuneLoggedInUser",
+                JSON.stringify({
+                    name: savedUser.name,
+                    email: savedUser.email,
+                    mobile: savedUser.mobile
+                })
+            );
+
+
+            document.getElementById("message")
+                .innerText =
+                "Login successful!";
+
+
+            setTimeout(function () {
+
+                window.location.href =
+                    "index(1).html";
+
+            }, 1000);
+
+        }
+
+        else {
+
+            document.getElementById("message")
+                .innerText =
+                "Invalid email/mobile or password.";
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
